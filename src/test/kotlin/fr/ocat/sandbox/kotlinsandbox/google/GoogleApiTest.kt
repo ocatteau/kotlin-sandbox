@@ -1,4 +1,4 @@
-package fr.ocat.sandbox.kotlinsandbox
+package fr.ocat.sandbox.kotlinsandbox.google
 
 import org.http4k.client.ApacheClient
 import org.http4k.core.Method
