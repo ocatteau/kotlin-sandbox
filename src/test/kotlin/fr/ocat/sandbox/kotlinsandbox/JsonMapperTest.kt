@@ -44,17 +44,3 @@ data class AddressComponent(val properties: PropertySet): PropertySet by propert
     val types = valueOf<List<String>>("types")
     val shortText = this?.valueOf<String>("shortText")
 }
-
-
-inline fun <reified T: Any> PropertySet.valueOf(key: String): T {
-    val value = get(key) ?: error("Can't find key '$key'")
-
-    return value as? T ?: error("Value for key <$key> is not a ${T::class}")
-}
-
-inline fun <reified T : Any> PropertySet.valueOf(key0: String, key1: String): T {
-    return valueOf<PropertySet>(key0).valueOf<T>(key1)
-}
-
-
-typealias PropertySet = Map<String, Any?>

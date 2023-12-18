@@ -49,20 +49,6 @@ dependencies {
 
 
 
-java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
-    }
-}
-
-tasks.compileKotlin {
-    compilerOptions.freeCompilerArgs.add("-Xcontext-receivers")
-}
-
-tasks.compileTestKotlin {
-    compilerOptions.freeCompilerArgs.add("-Xcontext-receivers")
-}
-
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         freeCompilerArgs += "-Xjsr305=strict"
